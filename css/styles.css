@@ -110,7 +110,7 @@ img {
     color: #2e2f42;
 }
 /* Приховуємо бургер і мобільне меню за замовчуванням на десктопі */
-.menu-button,
+.menu-button
  {
     display: none;
 }
@@ -122,19 +122,98 @@ img {
 }
 /* тільки для бургер-меню */
 .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 640px;
+    background-color: #ffffff;
+    padding: 16px;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     transform: translateX(100%);
-    opacity: 0;
-    pointer-events: none;
-    transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
-}
+    transition: transform 250ms ease-in-out;
+    z-index: 999;
+    overflow-y: auto; }
 
 #menu-toggle:checked~.mobile-menu {
     transform: translateX(0);
     opacity: 1;
     pointer-events: auto;
 }
+* Кнопка закриття */ 
+.menu-close-button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    line-height: 0;
+}
+/* Список навігації */
+.mobile-nav-list,
+.mobile-address-list,
+.mobile-social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px 0;
+}
 
+.mobile-nav-list li:not(:last-child),
+.mobile-address-list li:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+/* Посилання навігації */
+.navigation-link {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    color: #2e2f42;
+}
+
+/* Активне посилання */
+.navigation-link--active {
+    color: #404bbf;
+    position: relative;
+}
+
+/* Адреса */
+.address-link {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #434455;
+    text-decoration: none;
+}
+
+/* Соцмережі */
+.mobile-social-list {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.mobile-social-list a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4d5ae5;
+    fill: #ffffff;
+    transition: background-color 250ms ease-in-out;
+}
+
+.mobile-social-list a:hover,
+.mobile-social-list a:focus {
+    background-color: #31d0aa;
+}
 .navigation-list {
     display: flex;
     gap: 40px;
