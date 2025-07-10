@@ -111,7 +111,7 @@ img {
 }
 /* Приховуємо бургер і мобільне меню за замовчуванням на десктопі */
 .menu-button,
-.mobile-menu {
+ {
     display: none;
 }
 
@@ -121,10 +121,19 @@ img {
     display: block;
 }
 /* тільки для бургер-меню */
+.mobile-menu {
+    display: flex;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+}
+
 #menu-toggle:checked~.mobile-menu {
-    display: flex; }
-
-
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
 
 .navigation-list {
     display: flex;
