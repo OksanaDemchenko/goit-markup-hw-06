@@ -214,6 +214,17 @@ img {
 .mobile-social-list a:focus {
     background-color: #31d0aa;
 }
+.mobile-social-list .icon {
+    fill: currentColor;
+}
+.mobile-social-list a {
+    color: #ffffff;
+}
+
+.mobile-social-list svg {
+    fill: currentColor;
+    transition: fill 250ms ease-in-out;
+}
 .navigation-list {
     display: flex;
     gap: 40px;
