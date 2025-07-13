@@ -134,11 +134,13 @@ img {
     display: block;
 }
 /* тільки для бургер-меню */
-
 .menu-button {
-    display: block;
-    cursor: pointer;
- }
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
 
 .mobile-wrapper input:checked~.mobile-menu {
     transform: translateX(0);
@@ -1218,9 +1220,17 @@ legend.visually-hidden {
     .menu-button {
         display: block;
         cursor: pointer;
-        opacity: 1;
-    }
+        position: absolute;
+            top: 16px;
+            right: 16px;
+            z-index: 9999;
+            padding: 4px;
+        }
+    
+    .mobile-wrapper input:checked~.mobile-menu {
+    display: flex;
 
+}
     .mobile-menu {
         width: 100%;
         height: 100vh;
@@ -1279,10 +1289,7 @@ legend.visually-hidden {
         margin-bottom: 48px;
         width: 193px;
         white-space: nowrap;
-        
-
-    }
-
+            }
     .mobile-social-list {
         display: flex;
         gap: 40px;
@@ -1317,6 +1324,9 @@ legend.visually-hidden {
         display: flex;
         gap: 40px;
     }
+    .mobile-wrapper {
+              display: none;
+ }
 }
 @media screen and (min-width: 768px) and (max-width: 1157px) {
     .header {
@@ -1467,10 +1477,11 @@ legend.visually-hidden {
     .address-link:hover,
     .address-link:focus {
         color: #404bbf;       }
-    }
+    
     .mobile-wrapper {
         display: none;
           }
+}
 
 @media screen and (min-width: 768px) and (max-width: 1157px) {
     .hero-section {
