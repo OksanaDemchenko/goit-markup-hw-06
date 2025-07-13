@@ -1268,7 +1268,9 @@ legend.visually-hidden {
         .menu-button:focus .menu-icon {
             fill: #404bbf;
         }
-
+    .mobile-wrapper input.menu-toggle:checked~.menu-button {
+    display: none;
+}
     .mobile-nav-list {
         margin-top: 72px;
         margin-bottom: 168px;
